@@ -18,9 +18,9 @@ apt-get install liblapacke-dev checkinstall --yes
 apt-get install liblapack-doc checkinstall --yes
 apt-get install f2c --yes
 
-sudo add-apt-repository --yes ppa:xqms/opencv-nonfree
-sudo apt-get update
-sudo apt-get install libopencv-nonfree-dev --yes
+add-apt-repository --yes ppa:xqms/opencv-nonfree
+apt-get update
+apt-get install libopencv-nonfree-dev --yes
 
 echo "Making levmar..."
 
@@ -44,17 +44,17 @@ make clean
 make
 
 echo "Copying homest directory to /usr/local/include"
-sudo cp ../homest-1.4/ /usr/local/include/ -r
+cp ../homest-1.4/ /usr/local/include/ -r
 echo "Copying libhomest to /usr/local/lib"
-sudo cp libhomest.a /usr/local/lib/
+cp libhomest.a /usr/local/lib/
 
 # Now install database interface 
 
 echo "Installing the database interface..." 
 
-sudo apt-get install ros-indigo-sql-database --yes
-sudo apt-get install pgadmin3 --yes
-sudo apt-get install postgresql --yes
+apt-get install ros-indigo-sql-database --yes
+apt-get install pgadmin3 --yes
+apt-get install postgresql --yes
 
 echo "Cloning the homography git repos..."
 cd ../.. # Going into catkin_ws/src directory
@@ -92,4 +92,8 @@ source /opt/ros/indigo/setup.bash
 source devel/setup.bash
 
 catkin_make
+chown $USER devel/ -R
+chown $USER build/ -R
+chown $USER src/ -R
+
 
