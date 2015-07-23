@@ -96,4 +96,7 @@ chown $USER devel/ -R
 chown $USER build/ -R
 chown $USER src/ -R
 
-
+cd src/ueyeROS/ueyeInstall
+qmake .
+make -j8
+./install.run
