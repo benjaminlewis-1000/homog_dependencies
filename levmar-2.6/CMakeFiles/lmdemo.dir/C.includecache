@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/benjamin/Dropbox/Research/Code/levmar-2.6/levmar.h
+
+/home/benjamin/Dropbox/Research/Code/levmar-2.6/lmdemo.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+float.h
+-
+levmar.h
+/home/benjamin/Dropbox/Research/Code/levmar-2.6/levmar.h
+

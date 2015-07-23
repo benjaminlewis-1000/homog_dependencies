@@ -1,0 +1,1 @@
+/usr/bin/cc      CMakeFiles/lmdemo.dir/lmdemo.c.o  -o lmdemo  -L/home/benjamin/Dropbox/Research/Code/levmar-2.6 -rdynamic liblevmar.a -lm -llapack -lblas -lf2c -Wl,-rpath,/home/benjamin/Dropbox/Research/Code/levmar-2.6 
