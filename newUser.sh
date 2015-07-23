@@ -10,9 +10,3 @@ send "hex\r"
 expect "Enter it again:"
 send "hex\r"
 interact
-
-
-#spawn ssh bpl5@ssh.et.byu.edu
-#expect "bpl5@ssh.et.byu.edu's password:"
-#send "\n"
-#interact

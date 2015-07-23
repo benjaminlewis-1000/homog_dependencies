@@ -4,6 +4,8 @@ REPLY=`whoami`
 
 USER=`who | awk '{print $1}' | sort -u`
 
+# TODO: Variable for this directory as the base station
+
 if ! [ $REPLY == 'root' ]; then
 	echo "You are not sudo. Please run as sudo."
 	exit
@@ -100,3 +102,20 @@ cd src/ueyeROS/ueyeInstall
 qmake .
 make -j8
 ./install.run
+
+CONFIG_DIR=`ps auwx | grep postgresql | grep -v grep | awk '{print $NF}' | sed 's/config_file=//' | sed 's/postgresql.conf//' | tail -n 1`
+
+cp psqlConfig/* $CONFIG_DIR
+
+service postgresql reload
+
+apt-get install expect
+# Currently in src/ueyeRos/ueyeInstall
+cd ../../dependencies
+
+DIR=`pwd`
+# OK, so that's working
+su - postgres -c $DIR/newUser.sh
+
+
+
