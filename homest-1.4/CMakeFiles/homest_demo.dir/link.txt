@@ -1,0 +1,1 @@
+/usr/bin/cc      -lm -ldl CMakeFiles/homest_demo.dir/homest_demo.c.o  -o homest_demo  -L/home/benjamin/Research/Code/homest-1.4  -L/usr/local/levmar-2.5 -rdynamic libhomest.a -llevmar -lm -llapack -lblas -lf2c -Wl,-rpath,/home/benjamin/Research/Code/homest-1.4:/usr/local/levmar-2.5 

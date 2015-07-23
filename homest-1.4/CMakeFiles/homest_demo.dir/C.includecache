@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/benjamin/Research/Code/homest-1.4/homest.h
+
+/home/benjamin/Research/Code/homest-1.4/homest_demo.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+homest.h
+/home/benjamin/Research/Code/homest-1.4/homest.h
+

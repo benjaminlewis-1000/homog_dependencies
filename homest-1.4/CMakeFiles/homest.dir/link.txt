@@ -1,0 +1,2 @@
+/usr/bin/ar cr libhomest.a  CMakeFiles/homest.dir/calc_2Dhomog_coeffs.c.o CMakeFiles/homest.dir/homest.c.o CMakeFiles/homest.dir/lqs.c.o CMakeFiles/homest.dir/linalg.c.o CMakeFiles/homest.dir/norm.c.o CMakeFiles/homest.dir/buckets.c.o
+/usr/bin/ranlib libhomest.a
