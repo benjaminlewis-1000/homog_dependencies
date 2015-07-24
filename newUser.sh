@@ -4,7 +4,9 @@
 
 # sudo su - postgres -c /home/benjamin/catkin_ws/src/dependencies/t2.sh
 
-spawn createuser -P -s -e benjamin
+set user [lindex $argv 0];
+
+spawn createuser -P -s -e $user
 expect "Enter password for new role:"
 send "hex\r"
 expect "Enter it again:"

@@ -9,13 +9,25 @@ if ! [ $REPLY == 'root' ]; then
 	exit
 fi
 
-CONFIG_DIR=`ps auwx | grep postgresql | grep -v grep | awk '{print $NF}' | sed 's/config_file=//' | sed 's/postgresql.conf//' | tail -n 1`
+DIR=`pwd`
 
-cp dbFiles/* $CONFIG_DIR
+su - postgres -c "$DIR/newUser.sh benjamin"
+su - postgres -c "$DIR/newUser.sh $USER"
+su - postgres -c "$DIR/newUser.sh root"
 
-service postgresql reload
+# Create the databases.
 
-#su - postgres
-#CREATE ROLE benjamin LOGIN CREATEDB CREATEROLE PASSWORD 'hex'
-#createuser benjamin -D -r -l -W
-#echo hex
+createdb ESM_KEYFRAMES
+createdb FIND_MATCH_KEYFRAMES
+createdb FIND_ONLY_KEYFRAMES
+
+# Populate the databases with the tables we have saved
+
+psql ESM_KEYFRAMES < databases/esm.db
+psql FIND_MATCH_KEYFRAMES < databases/findMatch.db
+psql FIND_ONLY_KEYFRAMES < databases/findOnly.db
+
+source /opt/ros/indigo/setup.bash
+source /home/rransac1/vision_catkin/devel/setup.bash
+
+rosrun homography_calc dbTest | grep passed

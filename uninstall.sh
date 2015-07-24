@@ -35,4 +35,11 @@ rm -rf ../ROScamPub/
 rm -rf ../../devel/
 rm -rf ../../build/
 
+dropdb FIND_ONLY_KEYFRAMES
+dropdb FIND_MATCH_KEYFRAMES
+dropdb ESM_KEYFRAMES
+
+su - postgres -c "dropuser root"
+su - postgres -c "dropuser benjamin"
+su - postgres -c "dropuser rransac1"
 

@@ -4,4 +4,6 @@ apt-get install expect
 
 DIR=`pwd`
 
-su - postgres -c $DIR/newUser.sh
+# OK, so that's working
+su - postgres -c "$DIR/newUser.sh benjamin"
+su - postgres -c "$DIR/newUser.sh $USER"
