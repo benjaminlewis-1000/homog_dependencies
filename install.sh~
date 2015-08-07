@@ -137,9 +137,11 @@ psql FIND_ONLY_KEYFRAMES < databases/findOnly.db
 
 ../homography_calc/scripts/cleardatabase.sh
 
+source ~/.bashrc
+
 # Run the test script for the database setup, see
 # if everything passes.
-rosrun homography_calc dbTest | grep passed
+roslaunch homography_calc dbtest.launch | grep passed
 
 
 

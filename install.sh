@@ -2,6 +2,8 @@
 
 REPLY=`whoami`
 
+SCRIPT_DIR=`dirname $0`
+
 USER=`who | awk '{print $1}' | sort -u`
 
 # Directory this script is located in.
@@ -141,7 +143,7 @@ source ~/.bashrc
 
 # Run the test script for the database setup, see
 # if everything passes.
-rosrun homography_calc dbTest | grep passed
+roslaunch homography_calc dbtest.launch | grep passed
 
 
 
