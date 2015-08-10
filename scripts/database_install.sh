@@ -47,6 +47,6 @@ createdb FIND_ONLY_KEYFRAMES
 
 # Populate the databases with the tables we have saved
 
-psql ESM_KEYFRAMES < databases/esm.db
-psql FIND_MATCH_KEYFRAMES < databases/findMatch.db
-psql FIND_ONLY_KEYFRAMES < databases/findOnly.db
+psql ESM_KEYFRAMES < $SCRIPT_DIR/../databases/esm.db
+psql FIND_MATCH_KEYFRAMES < $SCRIPT_DIR/../databases/findMatch.db
+psql FIND_ONLY_KEYFRAMES < $SCRIPT_DIR/../databases/findOnly.db
