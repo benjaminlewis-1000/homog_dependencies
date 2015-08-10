@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# Success
+
 REPLY=`whoami`
 
 SCRIPT_DIR=`dirname $0`
