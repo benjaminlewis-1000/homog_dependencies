@@ -2,10 +2,15 @@
 
 # Reasonable assumption: Running ubuntu 14.04 or later.
 
+# Works on a system with ROS installed already.
+
+# Figure out who is running this script. Root for sudo.
 REPLY=`whoami`
 
+# Host directory of the script
 SCRIPT_DIR=`dirname $0`
 
+# A normal user of the system. 
 USER=`who | awk '{print $1}' | sort -u`
 
 # Directory this script is located in.
@@ -18,6 +23,8 @@ if ! [ $REPLY == 'root' ]; then
 	exit
 fi
 
+# Direct from the ROS installation site, with defaults for 'yes' on the
+# apt-gets. 
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
 
@@ -25,6 +32,8 @@ apt-get update
 
 sudo apt-get install ros-indigo-desktop-full -y
 
-su $USER -c 'rosdep init >/dev/null'
+# Run rosdep init and update as user rather than sudo. 
+# The system complains if these are run as sudo.
+rosdep init >/dev/null
 su $USER -c 'rosdep update'
 
