@@ -24,7 +24,7 @@ apt-get install postgresql --yes
 
 service postgresql reload
 
-CONFIG_DIR=`ps auwx | grep postgresql | grep -v grep | awk '{print $NF}' | sed 's/config_file=//' | sed 's/postgresql.conf//' | tail -n 1`
+CONFIG_DIR=`ps auwx | grep postgresql | grep -v grep | awk '{print $NF}' | sed 's/config_file=//' | sed 's/postgresql.conf//' | grep postgres`
 
 cp psqlConfig/* $CONFIG_DIR
 
