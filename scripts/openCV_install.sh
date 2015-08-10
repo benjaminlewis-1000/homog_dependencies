@@ -4,6 +4,7 @@
 
 # Works on a system with OpenCV installed already.
 # On a new system, OpenCV probably is already installed by ROS first (in my script)
+# Works on new system. 
 
 REPLY=`whoami`
 

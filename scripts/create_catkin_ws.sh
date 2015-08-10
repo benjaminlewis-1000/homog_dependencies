@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# Works fine in both. 
+
 COFF="\033[0m"
 function red    { echo -e "\033[1;31m$@ ${COFF}"; }
 function green  { echo -e "\033[1;32m$@ ${COFF}"; }
