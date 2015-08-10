@@ -26,7 +26,7 @@ service postgresql reload
 
 CONFIG_DIR=`ps auwx | grep postgresql | grep -v grep | awk '{print $NF}' | sed 's/config_file=//' | sed 's/postgresql.conf//' | grep postgres`
 
-cp psqlConfig/* $CONFIG_DIR
+cp $SCRIPT_DIR/../psqlConfig/* $CONFIG_DIR
 
 apt-get install expect
 # Currently in src/ueyeRos/ueyeInstall
