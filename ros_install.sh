@@ -23,7 +23,7 @@ apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
 
 apt-get update
 
-sudo apt-get install ros-indigo-desktop-full
+sudo apt-get install ros-indigo-desktop-full -y
 
 su $USER -c 'rosdep init >/dev/null'
 su $USER -c 'rosdep update'
