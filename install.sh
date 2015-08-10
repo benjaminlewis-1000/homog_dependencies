@@ -17,44 +17,44 @@ if ! [ $REPLY == 'root' ]; then
 fi
 
 # Install packages for levmar, lapack, and homest.
+'''
+	apt-get install liblapack-dev --yes
+	apt-get install libblas-dev checkinstall --yes
+	apt-get install libblas-doc checkinstall --yes
+	apt-get install liblapacke-dev checkinstall --yes
+	apt-get install liblapack-doc checkinstall --yes
+	apt-get install f2c --yes
 
-apt-get install liblapack-dev --yes
-apt-get install libblas-dev checkinstall --yes
-apt-get install libblas-doc checkinstall --yes
-apt-get install liblapacke-dev checkinstall --yes
-apt-get install liblapack-doc checkinstall --yes
-apt-get install f2c --yes
+	add-apt-repository --yes ppa:xqms/opencv-nonfree
+	apt-get update
+	apt-get install libopencv-nonfree-dev --yes
 
-add-apt-repository --yes ppa:xqms/opencv-nonfree
-apt-get update
-apt-get install libopencv-nonfree-dev --yes
+	echo "Making levmar..."
 
-echo "Making levmar..."
+	cd levmar-2.6
+	rm CMakeCache.txt
+	cmake .
+	make clean
+	make
 
-cd levmar-2.6
-rm CMakeCache.txt
-cmake .
-make clean
-make
+	echo "Copying levmar.h to /usr/local/include..."
+	cp levmar.h /usr/local/include
+	echo "Copying liblevmar to /usr/local/lib..."
+	cp liblevmar.a /usr/local/lib
 
-echo "Copying levmar.h to /usr/local/include..."
-cp levmar.h /usr/local/include
-echo "Copying liblevmar to /usr/local/lib..."
-cp liblevmar.a /usr/local/lib
+	echo "Starting to make homest..."
 
-echo "Starting to make homest..."
+	cd ../homest-1.4
+	rm CMakeCache.txt
+	cmake .
+	make clean
+	make
 
-cd ../homest-1.4
-rm CMakeCache.txt
-cmake .
-make clean
-make
-
-echo "Copying homest directory to /usr/local/include"
-cp ../homest-1.4/ /usr/local/include/ -r
-echo "Copying libhomest to /usr/local/lib"
-cp libhomest.a /usr/local/lib/
-
+	echo "Copying homest directory to /usr/local/include"
+	cp ../homest-1.4/ /usr/local/include/ -r
+	echo "Copying libhomest to /usr/local/lib"
+	cp libhomest.a /usr/local/lib/
+'''
 # Now install database interface 
 
 echo "Installing the database interface..." 

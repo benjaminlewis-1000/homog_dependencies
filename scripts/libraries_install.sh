@@ -44,13 +44,13 @@ cp liblevmar.a /usr/local/lib
 
 echo "Starting to make homest..."
 
-cd ../homest-1.4
+cd $SCRIPT_DIR/../homest-1.4
 rm CMakeCache.txt
 cmake .
 make clean
 make
 
 echo "Copying homest directory to /usr/local/include"
-cp ../homest-1.4/ /usr/local/include/ -r
+cp $SCRIPT_DIR/../homest-1.4/ /usr/local/include/ -r
 echo "Copying libhomest to /usr/local/lib"
 cp libhomest.a /usr/local/lib/
