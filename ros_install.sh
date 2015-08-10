@@ -25,6 +25,6 @@ apt-get update
 
 sudo apt-get install ros-indigo-desktop-full
 
-rosdep init >/dev/null
-rosdep update
+su $USER -c 'rosdep init >/dev/null'
+su $USER -c 'rosdep update'
 
