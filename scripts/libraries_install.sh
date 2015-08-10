@@ -31,7 +31,7 @@ apt-get install libopencv-nonfree-dev --yes
 
 echo "Making levmar..."
 
-cd levmar-2.6
+cd $SCRIPT_DIR/../levmar-2.6
 rm CMakeCache.txt
 cmake .
 make clean
