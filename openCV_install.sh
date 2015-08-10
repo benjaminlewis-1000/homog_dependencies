@@ -3,6 +3,7 @@
 # OpenCV installation, including nonfree.
 
 # Works on a system with OpenCV installed already.
+# On a new system, OpenCV probably is already installed by ROS first (in my script)
 
 REPLY=`whoami`
 

@@ -3,6 +3,7 @@
 # OpenCV installation, including nonfree.
 
 # Works on a system with OpenCV installed already.
+# On a new system, OpenCV probably is already installed by ROS first. 
 
 REPLY=`whoami`
 
@@ -20,6 +21,7 @@ if ! [ $REPLY == 'root' ]; then
 	exit
 fi
 
+# Directions from the OpenCV website for Ubuntu.
 apt-get install build-essential -y
 apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev -y 
 apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev -y

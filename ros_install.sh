@@ -3,6 +3,7 @@
 # Reasonable assumption: Running ubuntu 14.04 or later.
 
 # Works on a system with ROS installed already.
+# Works on a blank system as well. 
 
 # Figure out who is running this script. Root for sudo.
 REPLY=`whoami`

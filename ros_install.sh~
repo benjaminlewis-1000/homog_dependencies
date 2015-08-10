@@ -34,6 +34,6 @@ sudo apt-get install ros-indigo-desktop-full -y
 
 # Run rosdep init and update as user rather than sudo. 
 # The system complains if these are run as sudo.
-su $USER -c 'rosdep init >/dev/null'
+rosdep init >/dev/null
 su $USER -c 'rosdep update'
 
