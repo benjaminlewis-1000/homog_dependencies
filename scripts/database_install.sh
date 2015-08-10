@@ -22,15 +22,15 @@ apt-get install ros-indigo-sql-database --yes
 apt-get install pgadmin3 --yes
 apt-get install postgresql --yes
 
+service postgresql reload
+
 CONFIG_DIR=`ps auwx | grep postgresql | grep -v grep | awk '{print $NF}' | sed 's/config_file=//' | sed 's/postgresql.conf//' | tail -n 1`
 
 cp psqlConfig/* $CONFIG_DIR
 
-service postgresql reload
-
 apt-get install expect
 # Currently in src/ueyeRos/ueyeInstall
-cd ../../dependencies
+cd $SCRIPT_DIR/..
 
 # Call the script to create new users in the database.
 # These users have root privileges, which is OK for what
