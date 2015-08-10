@@ -38,3 +38,11 @@ sudo apt-get install ros-indigo-desktop-full -y
 rosdep init >/dev/null
 su $USER -c 'rosdep update'
 
+REPLY=`grep 'indigo/setup.bash' $HOME/.bashrc`
+
+if [ $REPLY =~ setup$ ]; then  # We don't have it in our bashrc yet
+	echo "source /opt/ros/indigo/setup.bash" >> $HOME/.bashrc
+	source $HOME/.bashrc
+fi
+
+apt-get install python-rosinstall -y
