@@ -38,7 +38,7 @@ fi
 
 chown $USER homography_calc -R
 
-if ! [ -d "ROScamPub" ]; then
+if ! [ -d "ROScamPub" ] && ! [ -d "webcam_pub" ] ; then
 	git clone https://github.com/speedyswimmer1000/ROScamPub.git
 else
 	echo "ROS cam pub already exists..."
