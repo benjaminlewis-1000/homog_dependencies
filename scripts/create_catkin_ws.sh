@@ -16,7 +16,8 @@ cd $HOME
 if [ $1 ]; then
 	WORKSPACE=$1
 else
-	WORKSPACE="catkin_ws"
+	echo "No workspace given."
+	exit
 fi
 
 WORKSPACE_PATH=`pwd`/$WORKSPACE
@@ -51,8 +52,8 @@ else
 	if ! catkin_init_workspace 2>&1 | grep -q already; then
 	  catkin_make -C ../
 	  yellow "adding source setup.bash to .bashrc"
-	  #echo "source $WORKSPACE_PATH/devel/setup.bash" >> ~/.bashrc
-	  source ~/.bashrc     
+	  echo "source $WORKSPACE_PATH/devel/setup.bash" >> $HOME/.bashrc
+	  source $HOME/.bashrc     
 	fi
   else
 	yellow "Adding /src directory and catkinizing..."
@@ -62,10 +63,9 @@ else
 	catkin_init_workspace
 	catkin_make -C ../
 	yellow "adding source setup.bash to .bashrc"
-	#echo "source $WORKSPACE_PATH/devel/setup.bash" >> ~/.bashrc
-	source ~/.bashrc
+	echo "source $WORKSPACE_PATH/devel/setup.bash" >> $HOME/.bashrc
+	source $HOME/.bashrc
   fi
-
 
 fi
 

@@ -41,14 +41,17 @@ su - postgres -c "$BASE_DIR/newUser.sh root"
 
 # Create the databases.
 
-createdb ESM_KEYFRAMES
-createdb FIND_MATCH_KEYFRAMES
-createdb FIND_ONLY_KEYFRAMES
+
+createdb $FINDONLY_DB
+createdb $FINDMATCH_DB
+createdb $ESM_DB
 
 # Populate the databases with the tables we have saved
 
 echo $SCRIPT_DIR
 
-psql ESM_KEYFRAMES < $SCRIPT_DIR/../databases/esm.db
-psql FIND_MATCH_KEYFRAMES < $SCRIPT_DIR/../databases/findMatch.db
-psql FIND_ONLY_KEYFRAMES < $SCRIPT_DIR/../databases/findOnly.db
+psql $ESM_DB < $SCRIPT_DIR/../databases/esm.db
+psql $FINDMATCH_DB < $SCRIPT_DIR/../databases/findMatch.db
+psql $FINDONLY_DB < $SCRIPT_DIR/../databases/findOnly.db
+
+
