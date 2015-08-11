@@ -37,7 +37,7 @@ if [ ! -d "$WORKSPACE" ]; then
   catkin_make -C ../
   yellow "adding source setup.bash to .bashrc"
   
-  echo "source ~/$WORKSPACE/devel/setup.bash" >> $HOME/.bashrc
+  echo "source $WORKSPACE/devel/setup.bash" >> $HOME/.bashrc
   
   source $HOME/.bashrc
   
