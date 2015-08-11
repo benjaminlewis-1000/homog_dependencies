@@ -1,8 +1,10 @@
 #! /bin/bash
 
+
+SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 DIR=$HOME/catkin_ws/src
 
-rm testdir.yaml
+CATKIN=$HOME/catkin_ws
+echo $CATKIN
 
-echo "/funcTestDir: $DIR/homography_calc/funcTesting" >> testdir.yaml
-echo "/catkin_ws_dir: $HOME/catkin_ws" >> testdir.yaml
+$SCRIPT_DIR/create_catkin_ws.sh $CATKIN

@@ -6,6 +6,8 @@ USER=`who | awk '{print $1}' | sort -u`
 
 CATKIN=$1
 
+echo $CATKIN
+
 if ! [ $REPLY == 'root' ]; then
 	echo "You are not sudo. Please run as sudo."
 	exit

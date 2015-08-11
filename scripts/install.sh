@@ -11,7 +11,11 @@ if ! [ $REPLY == 'root' ]; then
 	exit
 fi
 
-source vars.sh
+CATKIN=$HOME/catkin_ws
+
+FINDONLY_DB=FIND_ONLY_KEYFRAMES
+FINDMATCH_DB=FIND_MATCH_KEYFRAMES
+ESM_DB=ESM_KEYFRAMES
 
 # Create the catkin database
 
