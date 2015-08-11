@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/hex/homog_dependencies/levmar-2.6/levmar.h
+/home/hex/dependencies/levmar-2.6/levmar.h
 
-/home/hex/homog_dependencies/levmar-2.6/lmdemo.c
+/home/hex/dependencies/levmar-2.6/lmdemo.c
 stdio.h
 -
 stdlib.h
@@ -18,5 +18,5 @@ math.h
 float.h
 -
 levmar.h
-/home/hex/homog_dependencies/levmar-2.6/levmar.h
+/home/hex/dependencies/levmar-2.6/levmar.h
 

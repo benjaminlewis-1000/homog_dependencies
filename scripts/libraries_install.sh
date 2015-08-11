@@ -4,7 +4,7 @@
 
 REPLY=`whoami`
 
-SCRIPT_DIR=`dirname $0`
+SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 
 USER=`who | awk '{print $1}' | sort -u`
 

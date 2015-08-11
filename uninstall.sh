@@ -11,6 +11,14 @@ fi
 
 # Install packages for levmar, lapack, and homest.
 
+dropdb FIND_ONLY_KEYFRAMES
+dropdb FIND_MATCH_KEYFRAMES
+dropdb ESM_KEYFRAMES
+
+su - postgres -c "dropuser root"
+su - postgres -c "dropuser benjamin"
+su - postgres -c "dropuser hex"
+
 apt-get remove liblapack-dev --yes
 apt-get remove libblas-dev --yes
 apt-get remove libblas-doc --yes
@@ -34,12 +42,4 @@ rm -rf ../ueyeROS/
 rm -rf ../ROScamPub/
 rm -rf ../../devel/
 rm -rf ../../build/
-
-dropdb FIND_ONLY_KEYFRAMES
-dropdb FIND_MATCH_KEYFRAMES
-dropdb ESM_KEYFRAMES
-
-su - postgres -c "dropuser root"
-su - postgres -c "dropuser benjamin"
-su - postgres -c "dropuser rransac1"
 

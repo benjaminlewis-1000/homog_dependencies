@@ -4,13 +4,13 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
-  "/home/hex/homog_dependencies/homest-1.4/homest_demo.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest_demo.dir/homest_demo.c.o"
+  "/home/hex/dependencies/homest-1.4/homest_demo.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest_demo.dir/homest_demo.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/DependInfo.cmake"
+  "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

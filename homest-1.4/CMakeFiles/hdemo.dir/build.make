@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hex/homog_dependencies/homest-1.4
+CMAKE_SOURCE_DIR = /home/hex/dependencies/homest-1.4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hex/homog_dependencies/homest-1.4
+CMAKE_BINARY_DIR = /home/hex/dependencies/homest-1.4
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hdemo.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/hdemo.dir/flags.make
 
 CMakeFiles/hdemo.dir/homest_demo2.cpp.o: CMakeFiles/hdemo.dir/flags.make
 CMakeFiles/hdemo.dir/homest_demo2.cpp.o: homest_demo2.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hex/homog_dependencies/homest-1.4/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hex/dependencies/homest-1.4/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/hdemo.dir/homest_demo2.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/hdemo.dir/homest_demo2.cpp.o -c /home/hex/homog_dependencies/homest-1.4/homest_demo2.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/hdemo.dir/homest_demo2.cpp.o -c /home/hex/dependencies/homest-1.4/homest_demo2.cpp
 
 CMakeFiles/hdemo.dir/homest_demo2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hdemo.dir/homest_demo2.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hex/homog_dependencies/homest-1.4/homest_demo2.cpp > CMakeFiles/hdemo.dir/homest_demo2.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hex/dependencies/homest-1.4/homest_demo2.cpp > CMakeFiles/hdemo.dir/homest_demo2.cpp.i
 
 CMakeFiles/hdemo.dir/homest_demo2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hdemo.dir/homest_demo2.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hex/homog_dependencies/homest-1.4/homest_demo2.cpp -o CMakeFiles/hdemo.dir/homest_demo2.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hex/dependencies/homest-1.4/homest_demo2.cpp -o CMakeFiles/hdemo.dir/homest_demo2.cpp.s
 
 CMakeFiles/hdemo.dir/homest_demo2.cpp.o.requires:
 .PHONY : CMakeFiles/hdemo.dir/homest_demo2.cpp.o.requires
@@ -131,6 +131,6 @@ CMakeFiles/hdemo.dir/clean:
 .PHONY : CMakeFiles/hdemo.dir/clean
 
 CMakeFiles/hdemo.dir/depend:
-	cd /home/hex/homog_dependencies/homest-1.4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hex/homog_dependencies/homest-1.4 /home/hex/homog_dependencies/homest-1.4 /home/hex/homog_dependencies/homest-1.4 /home/hex/homog_dependencies/homest-1.4 /home/hex/homog_dependencies/homest-1.4/CMakeFiles/hdemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hex/dependencies/homest-1.4 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hex/dependencies/homest-1.4 /home/hex/dependencies/homest-1.4 /home/hex/dependencies/homest-1.4 /home/hex/dependencies/homest-1.4 /home/hex/dependencies/homest-1.4/CMakeFiles/hdemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hdemo.dir/depend
 

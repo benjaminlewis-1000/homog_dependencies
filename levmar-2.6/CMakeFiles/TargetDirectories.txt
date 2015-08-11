@@ -1,2 +1,2 @@
-/home/hex/homog_dependencies/levmar-2.6/CMakeFiles/levmar.dir
-/home/hex/homog_dependencies/levmar-2.6/CMakeFiles/lmdemo.dir
+/home/hex/dependencies/levmar-2.6/CMakeFiles/levmar.dir
+/home/hex/dependencies/levmar-2.6/CMakeFiles/lmdemo.dir

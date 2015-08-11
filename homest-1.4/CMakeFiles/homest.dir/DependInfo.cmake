@@ -4,12 +4,12 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
-  "/home/hex/homog_dependencies/homest-1.4/buckets.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/buckets.c.o"
-  "/home/hex/homog_dependencies/homest-1.4/calc_2Dhomog_coeffs.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/calc_2Dhomog_coeffs.c.o"
-  "/home/hex/homog_dependencies/homest-1.4/homest.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/homest.c.o"
-  "/home/hex/homog_dependencies/homest-1.4/linalg.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/linalg.c.o"
-  "/home/hex/homog_dependencies/homest-1.4/lqs.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/lqs.c.o"
-  "/home/hex/homog_dependencies/homest-1.4/norm.c" "/home/hex/homog_dependencies/homest-1.4/CMakeFiles/homest.dir/norm.c.o"
+  "/home/hex/dependencies/homest-1.4/buckets.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/buckets.c.o"
+  "/home/hex/dependencies/homest-1.4/calc_2Dhomog_coeffs.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/calc_2Dhomog_coeffs.c.o"
+  "/home/hex/dependencies/homest-1.4/homest.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/homest.c.o"
+  "/home/hex/dependencies/homest-1.4/linalg.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/linalg.c.o"
+  "/home/hex/dependencies/homest-1.4/lqs.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/lqs.c.o"
+  "/home/hex/dependencies/homest-1.4/norm.c" "/home/hex/dependencies/homest-1.4/CMakeFiles/homest.dir/norm.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")
 

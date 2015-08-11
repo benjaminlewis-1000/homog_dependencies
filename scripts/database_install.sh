@@ -2,7 +2,7 @@
 
 REPLY=`whoami`
 
-SCRIPT_DIR=`dirname $0`
+SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 
 USER=`who | awk '{print $1}' | sort -u`
 
@@ -46,6 +46,8 @@ createdb FIND_MATCH_KEYFRAMES
 createdb FIND_ONLY_KEYFRAMES
 
 # Populate the databases with the tables we have saved
+
+echo $SCRIPT_DIR
 
 psql ESM_KEYFRAMES < $SCRIPT_DIR/../databases/esm.db
 psql FIND_MATCH_KEYFRAMES < $SCRIPT_DIR/../databases/findMatch.db

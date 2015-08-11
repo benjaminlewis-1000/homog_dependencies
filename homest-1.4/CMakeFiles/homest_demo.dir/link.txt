@@ -1,1 +1,1 @@
-/usr/bin/cc      CMakeFiles/homest_demo.dir/homest_demo.c.o  -o homest_demo  -L/home/hex/homog_dependencies/homest-1.4  -L/usr/local/levmar-2.5 -rdynamic libhomest.a -llevmar -lm -llapack -lblas -lf2c -Wl,-rpath,/home/hex/homog_dependencies/homest-1.4:/usr/local/levmar-2.5 
+/usr/bin/cc      CMakeFiles/homest_demo.dir/homest_demo.c.o  -o homest_demo  -L/home/hex/dependencies/homest-1.4  -L/usr/local/levmar-2.5 -rdynamic libhomest.a -llevmar -lm -llapack -lblas -lf2c -Wl,-rpath,/home/hex/dependencies/homest-1.4:/usr/local/levmar-2.5 

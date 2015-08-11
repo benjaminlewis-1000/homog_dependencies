@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/hex/homog_dependencies/homest-1.4/homest.h
+/home/hex/dependencies/homest-1.4/homest.h
 
-/home/hex/homog_dependencies/homest-1.4/homest_demo2.cpp
+/home/hex/dependencies/homest-1.4/homest_demo2.cpp
 stdio.h
 -
 stdlib.h
@@ -38,5 +38,5 @@ list
 vector
 -
 homest.h
-/home/hex/homog_dependencies/homest-1.4/homest.h
+/home/hex/dependencies/homest-1.4/homest.h
 

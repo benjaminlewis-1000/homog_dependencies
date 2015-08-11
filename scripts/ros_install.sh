@@ -9,7 +9,7 @@
 REPLY=`whoami`
 
 # Host directory of the script
-SCRIPT_DIR=`dirname $0`
+SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 
 # A normal user of the system. 
 USER=`who | awk '{print $1}' | sort -u`
