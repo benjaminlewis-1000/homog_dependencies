@@ -92,4 +92,4 @@ su $USER -c ./cleardatabase.sh
 
 cd $HOME
 
-roslaunch homography_calc dbtest.launch | grep passed
+roslaunch homography_calc dbtest.launch 3>&1 1>/dev/null 2>&3- | grep passed
