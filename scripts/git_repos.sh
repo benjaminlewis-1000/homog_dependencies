@@ -80,6 +80,16 @@ rm testdir.yaml
 echo "/funcTestDir: $SRC_DIR/homography_calc/funcTesting" >> testdir.yaml
 echo "/catkin_ws_dir: $CATKIN" >> testdir.yaml
 
+# Rewrite the cleardatabase script.
+cd $SRC_DIR/homography_calc/scripts
+sed -i "s/benjamin/$USER/" cleardatabase.sh
+sed -i "s/benjamin/$USER/" saveKeyframes.sh
+
+su $USER -c ./cleardatabase.sh
+
 # Run the test script for the database setup, see
 # if everything passes.
+
+cd $HOME
+
 roslaunch homography_calc dbtest.launch | grep passed

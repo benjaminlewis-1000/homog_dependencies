@@ -4,7 +4,7 @@
 SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 DIR=$HOME/catkin_ws/src
 
-CATKIN=$HOME/catkin_ws
-echo $CATKIN
+cd $DIR/homography_calc/scripts
+pwd
 
-$SCRIPT_DIR/create_catkin_ws.sh $CATKIN
+su hex -c ./cleardatabase.sh
