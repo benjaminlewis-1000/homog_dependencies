@@ -72,8 +72,6 @@ source devel/setup.bash
 
 catkin_make
 
-(roscore &)
-
 # Write a correct test_dirs.param file for the database test.
 cd $SRC_DIR/homography_calc/param
 rm testdir.yaml
