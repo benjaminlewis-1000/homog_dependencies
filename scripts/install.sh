@@ -26,3 +26,4 @@ $SCRIPT_DIR/libraries_install.sh
 $SCRIPT_DIR/database_install.sh $FINDONLY_DB $FINDMATCH_DB $ESM_DB
 $SCRIPT_DIR/git_repos.sh $CATKIN
 
+source $HOME/.bashrc
