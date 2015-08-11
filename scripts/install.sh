@@ -15,9 +15,9 @@ source vars.sh
 
 # Create the catkin database
 
-$SCRIPT_DIR/create_catkin_ws.sh $CATKIN
 $SCRIPT_DIR/ros_install.sh
 $SCRIPT_DIR/openCV_install.sh
+$SCRIPT_DIR/create_catkin_ws.sh $CATKIN
 $SCRIPT_DIR/libraries_install.sh
 $SCRIPT_DIR/database_install.sh
 $SCRIPT_DIR/git_repos.sh $CATKIN
