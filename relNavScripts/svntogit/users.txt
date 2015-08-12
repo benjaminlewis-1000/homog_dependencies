@@ -1,0 +1,6 @@
+user1 = David Wheeler <david.wheeler@byu.edu>
+david_wheeler = David Wheeler <david.wheeler@byu.edu>
+paul_nyholm = Paul Nyholm <pwnyholm@gmail.com>
+daniel_koch = Dan Koch <daniel.p.koch@gmail.com>
+zog_the_caveman = Zog <magicc_lab@byu.edu>
+james_jackson = James Jackson <james.s.jackson@byu.edu>

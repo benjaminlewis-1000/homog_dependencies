@@ -1,0 +1,44 @@
+<launch>	
+
+        <arg name="desired_state_topic"    default="waypoints" /> 
+        <arg name="current_state_topic"    default="truth_msgs" /> 
+        <arg name="evart_topic"	    	   default="/evart/heavy_ros/base" /> 
+        <arg name="command_topic"	   default="commands" /> 
+        <arg name="mikro_command_topic"	   default="mikro_commands" /> 
+        <arg name="mikro_imu_topic"	   default="mikro_imu" /> 
+        <arg name="gain_file_name"	   default="$(find rotor_controller)/gains/HeavyGainMatrices.yaml"/>
+
+     <!-- mikro-serial --> 
+    	<node name="mikro_serial" pkg="mikro_serial" type="MikoControl" output="screen">
+		<remap from="mikoCmd"    to="$(arg mikro_command_topic)"/>
+		<remap from="mikoImu"    to="$(arg mikro_imu_topic)"/>
+    	</node>
+
+     <!-- mikro_relay --> 
+	<node name="mikro_relay" pkg="mikro_relay" type="mikro_relay" output="screen">
+		<remap from="commands"        to="$(arg command_topic)"/>
+		<remap from="commands_out"    to="$(arg mikro_command_topic)"/>
+		<remap from="MikoIMU"         to="$(arg mikro_imu_topic)"/>
+    	</node>
+
+     <!-- rotor_estimator --> 
+	<node name="rotor_estimator" pkg="rotor_estimator" type="truth" output="screen">
+		<remap from="truth" to="$(arg current_state_topic)"/>
+		<remap from="evart" to="$(arg evart_topic)"/>
+    	</node>
+
+     <!-- rotor_controller --> 
+	<node name="rotor_controller" pkg="rotor_controller" type="rotor_controller" output="screen">
+		<remap from="current_state"   to="$(arg current_state_topic)"/>
+		<remap from="desired_state"   to="$(arg desired_state_topic)"/>
+		<remap from="commands"        to="$(arg command_topic)"/>
+	  	<param name="gain_file_name" value="$(arg gain_file_name)" /> 
+    	</node>
+
+     <!-- rqt_plot --> 
+	<node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" output="screen" 
+		args="/$(arg mikro_command_topic)/pitch:roll:yaw:throttle">
+    	</node>
+
+</launch>
+

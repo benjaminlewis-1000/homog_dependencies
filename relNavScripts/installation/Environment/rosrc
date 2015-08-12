@@ -1,0 +1,32 @@
+ROS_SERVER=local
+#ROS_SERVER=odin
+#ROS_SERVER=jarvis
+#ROS_SERVER=capn
+
+
+if [ "$ROS_SERVER" == 'local' ]; then
+	export ROS_MASTER_URI=http://localhost:11311
+	export ROS_IP=localhost
+fi
+
+if [ "$ROS_SERVER" == 'capn' ]; then
+	export ROS_MASTER_URI=http://192.168.1.6:11311
+	export ROS_IP=192.168.1.8
+fi
+
+if [ "$ROS_SERVER" == 'odin' ]; then
+	export ROS_MASTER_URI=http://192.168.9.1:11311
+	export ROS_IP=192.168.9.23
+fi
+
+if [ "$ROS_SERVER" == 'jarvis' ]; then
+	export ROS_MASTER_URI=http://192.168.9.23:11311
+	export ROS_IP=192.168.9.23
+fi
+
+
+# ROS_WORKSPACE
+#source /opt/ros/indigo/setup.bash
+#source ~/image_transport_ws/devel/setup.bash
+#source ~/axon_ws/devel/setup.bash
+source ~/rel_nav_ws/devel/setup.bash

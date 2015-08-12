@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# color functions
+COFF="\033[0m"
+function red    { echo -e "\033[1;31m$@ ${COFF}"; }
+function green  { echo -e "\033[1;32m$@ ${COFF}"; }
+function yellow { echo -e "\033[1;33m$@ ${COFF}"; }
+function blue   { echo -e "\033[1;34m$@ ${COFF}"; }
+
+
+#Spotify
+green "*****************************Installing Spotify********************************"
+yellow "adding spotify to sources.list"
+sudo bash -c "echo 'deb http://repository.spotify.com stable non-free' >> /etc/apt/sources.list"
+yellow "Adding Public Spotify Key"
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 94558F59
+yellow "Installing Spotify"
+sudo apt-get update
+sudo apt-get -y install spotify-client
