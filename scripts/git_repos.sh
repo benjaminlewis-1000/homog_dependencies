@@ -56,6 +56,14 @@ fi
 
 chown $USER ueyeROS -R
 
+if ! [ -d "relNav" ]; then
+	git clone https://github.com/speedyswimmer1000/relNav.git
+else
+	echo "RelNav already exists..."
+fi
+
+chown $USER relNav -R
+
 # Build ueye drivers
 
 cd $SRC_DIR/ueyeROS/ueyeInstall

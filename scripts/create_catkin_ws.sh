@@ -67,7 +67,7 @@ else
 
 fi
 
-chown $USER $WORKSPACE/ -R
+chown $USER $WORKSPACE -R
 
 # Now I can cd into the source directory and work from there. 
 
