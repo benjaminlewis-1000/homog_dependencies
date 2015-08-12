@@ -16,6 +16,17 @@ if ! [ $REPLY == 'root' ]; then
 	exit
 fi
 
+if [ $# -eq 3 ]; then
+	FINDONLY_DB=$1
+	FINDMATCH_DB=$2
+	ESM_DB=$3
+else
+	FINDONLY_DB=FIND_ONLY_KEYFRAMES
+	FINDMATCH_DB=FIND_MATCH_KEYFRAMES
+	ESM_DB=ESM_KEYFRAMES
+fi
+
+
 echo "Installing the database interface..." 
 
 apt-get install ros-indigo-sql-database --yes
@@ -40,7 +51,6 @@ su - postgres -c "$BASE_DIR/newUser.sh $USER"
 su - postgres -c "$BASE_DIR/newUser.sh root"
 
 # Create the databases.
-
 
 createdb $FINDONLY_DB
 createdb $FINDMATCH_DB

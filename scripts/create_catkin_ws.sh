@@ -20,8 +20,6 @@ else
 	exit
 fi
 
-WORKSPACE_PATH=`pwd`/$WORKSPACE
-ORIG_PATH=`pwd`
  
 if [ ! -d /opt/ros/indigo ]; then
   red "Make sure you install ROS indigo first"
@@ -33,43 +31,43 @@ source /opt/ros/indigo/setup.bash
 if [ ! -d "$WORKSPACE" ]; then
   yellow "$WORKSPACE does not exist!"
   yellow "initializing catkin workspace..."
-  mkdir -p ${WORKSPACE_PATH}/src
-  cd ${WORKSPACE_PATH}/src
+  mkdir -p ${WORKSPACE}/src
+  cd ${WORKSPACE}/src
   catkin_init_workspace
   catkin_make -C ../
   yellow "adding source setup.bash to .bashrc"
   
-  echo "source ~/$WORKSPACE/devel/setup.bash" >> $HOME/.bashrc
+  echo "source $WORKSPACE/devel/setup.bash" >> $HOME/.bashrc
   
   source $HOME/.bashrc
   
 else
   yellow "$WORKSPACE exists!"  
 
-  if cd ${WORKSPACE_PATH}/src; then
-	yellow "Change directory to ${WORKSPACE_PATH}/src"
-	cd ${WORKSPACE_PATH}/src
+  if cd ${WORKSPACE}/src; then
+	yellow "Change directory to ${WORKSPACE}/src"
+	cd ${WORKSPACE}/src
 	if ! catkin_init_workspace 2>&1 | grep -q already; then
 	  catkin_make -C ../
 	  yellow "adding source setup.bash to .bashrc"
-	  echo "source $WORKSPACE_PATH/devel/setup.bash" >> $HOME/.bashrc
+	  echo "source $WORKSPACE/devel/setup.bash" >> $HOME/.bashrc
 	  source $HOME/.bashrc     
 	fi
   else
 	yellow "Adding /src directory and catkinizing..."
 	yellow "Change directory to $WORKSPACE/src"
-	mkdir -p ${WORKSPACE_PATH}/src
-	cd ${WORKSPACE_PATH}/src
+	mkdir -p ${WORKSPACE}/src
+	cd ${WORKSPACE}/src
 	catkin_init_workspace
 	catkin_make -C ../
 	yellow "adding source setup.bash to .bashrc"
-	echo "source $WORKSPACE_PATH/devel/setup.bash" >> $HOME/.bashrc
+	echo "source $WORKSPACE/devel/setup.bash" >> $HOME/.bashrc
 	source $HOME/.bashrc
   fi
 
 fi
 
-chown $USER $HOME/$WORKSPACE/ -R
+chown $USER $WORKSPACE/ -R
 
 # Now I can cd into the source directory and work from there. 
 

@@ -1,3 +1,6 @@
 *~
 *.a
 *.yaml
+./homest-1.4/libhomest.a
+./levmar-2.6/liblevmar.a
+

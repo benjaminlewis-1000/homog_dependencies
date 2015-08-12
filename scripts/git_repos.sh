@@ -6,6 +6,8 @@ USER=`who | awk '{print $1}' | sort -u`
 
 CATKIN=$1
 
+echo $CATKIN
+
 if ! [ $REPLY == 'root' ]; then
 	echo "You are not sudo. Please run as sudo."
 	exit
@@ -78,6 +80,16 @@ rm testdir.yaml
 echo "/funcTestDir: $SRC_DIR/homography_calc/funcTesting" >> testdir.yaml
 echo "/catkin_ws_dir: $CATKIN" >> testdir.yaml
 
+# Rewrite the cleardatabase script.
+cd $SRC_DIR/homography_calc/scripts
+sed -i "s/benjamin/$USER/" cleardatabase.sh
+sed -i "s/benjamin/$USER/" saveKeyframes.sh
+
+su $USER -c ./cleardatabase.sh
+
 # Run the test script for the database setup, see
 # if everything passes.
-roslaunch homography_calc dbtest.launch | grep passed
+
+cd $HOME
+
+roslaunch homography_calc dbtest.launch 3>&1 1>/dev/null 2>&3- | grep passed

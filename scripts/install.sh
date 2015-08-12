@@ -11,7 +11,11 @@ if ! [ $REPLY == 'root' ]; then
 	exit
 fi
 
-source vars.sh
+CATKIN=$HOME/catkin_ws
+
+FINDONLY_DB=FIND_ONLY_KEYFRAMES
+FINDMATCH_DB=FIND_MATCH_KEYFRAMES
+ESM_DB=ESM_KEYFRAMES
 
 # Create the catkin database
 
@@ -19,6 +23,7 @@ $SCRIPT_DIR/ros_indigo_install.sh
 $SCRIPT_DIR/openCV_install.sh
 $SCRIPT_DIR/create_catkin_ws.sh $CATKIN
 $SCRIPT_DIR/libraries_install.sh
-$SCRIPT_DIR/database_install.sh
+$SCRIPT_DIR/database_install.sh $FINDONLY_DB $FINDMATCH_DB $ESM_DB
 $SCRIPT_DIR/git_repos.sh $CATKIN
 
+source $HOME/.bashrc
