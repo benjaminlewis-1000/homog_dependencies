@@ -1,0 +1,5 @@
+apt-get install ros-indigo-mavros ros-indigo-mavros-extras -y
+apt-get install ros-indigo-joy -y
+(get the mavlink_relay git repo)
+(get the joy_velocity repo)
+run the ros_packages in /scripts.
