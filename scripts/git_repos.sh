@@ -36,6 +36,9 @@ if ! [ -d "homography_calc" ]; then
 	git clone https://github.com/speedyswimmer1000/homography_calc.git
 else
 	echo "Homography_calc already exists..."
+	cd homography_calc
+	git pull
+	cd ..
 fi
 
 chown $USER homography_calc -R
@@ -44,6 +47,10 @@ if ! [ -d "ROScamPub" ] && ! [ -d "webcam_pub" ] ; then
 	git clone https://github.com/speedyswimmer1000/ROScamPub.git
 else
 	echo "ROS cam pub already exists..."
+	if [ -d "ROScamPub" ] ; then
+	cd ROScamPub
+	git pull
+	cd ..
 fi
 
 chown $USER ROScamPub -R
@@ -52,6 +59,9 @@ if ! [ -d "ueyeROS" ]; then
 	git clone https://github.com/speedyswimmer1000/ueyeROS.git
 else
 	echo "ueyeROS already exists..."
+	cd ueyeROS
+	git pull
+	cd ..
 fi
 
 chown $USER ueyeROS -R
@@ -60,6 +70,9 @@ if ! [ -d "relNav" ]; then
 	git clone https://github.com/speedyswimmer1000/relNav.git
 else
 	echo "RelNav already exists..."
+	cd relNav
+	git pull
+	cd ..
 fi
 
 chown $USER relNav -R
@@ -79,6 +92,8 @@ cd $CATKIN
 
 source /opt/ros/indigo/setup.bash
 source devel/setup.bash
+
+chown $USER * -R
 
 catkin_make
 catkin_make
