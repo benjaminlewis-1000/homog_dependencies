@@ -25,7 +25,7 @@ $SCRIPT_DIR/create_catkin_ws.sh $CATKIN
 $SCRIPT_DIR/libraries_install.sh
 $SCRIPT_DIR/mavlink.sh
 $SCRIPT_DIR/database_install.sh $FINDONLY_DB $FINDMATCH_DB $ESM_DB
-$SCRIPT_DIR/git_repos.sh $CATKIN
 $SCRIPT_DIR/ros_packages
+$SCRIPT_DIR/git_repos.sh $CATKIN
 
 source $HOME/.bashrc

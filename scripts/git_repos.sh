@@ -81,6 +81,9 @@ source /opt/ros/indigo/setup.bash
 source devel/setup.bash
 
 catkin_make
+catkin_make
+catkin_make # Sometimes it doesn't all quite build the first time.
+
 
 # Write a correct test_dirs.param file for the database test.
 cd $SRC_DIR/homography_calc/param
